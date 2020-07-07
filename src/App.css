@@ -5,6 +5,8 @@
 }
 
 body {
-    background: #000;
+    background: #121212;
     color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
