@@ -11,10 +11,71 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+/* Video Item */
+
 .video-item {
     cursor: pointer;
 }
 
 .img-thumb {
     width: 150px;
+}
+
+.video-details {
+    background: #494949;
+    color: #fff;
+}
+
+/* Input/Nav */
+
+label {
+    display: block;
+}
+
+input {
+    display: inline;
+}
+
+.fa-youtube {
+    color: red;
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    display: block;
+}
+
+.main-lead {
+    text-align: center;
+}
+
+.fa-search {
+    color: red !important;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.fake-links {
+    list-style: none;
+    margin: auto;
+}
+
+.fake-links li {
+    display: inline-block;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fake-links li i {
+    font-size: 1.3rem;
 }

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import Youtube from "../api/Youtube";
 import VideoList from "./VideoList";
+import VideoDetail from "./VideoDetail";
+import Nav from "./Nav";
 import "../App.css";
 
 const KEY = "AIzaSyDR385vzb0vgxny4atFafXRSpgXk40UCsQ";
@@ -9,6 +11,12 @@ const KEY = "AIzaSyDR385vzb0vgxny4atFafXRSpgXk40UCsQ";
 class App extends Component {
     state = {
         videos: [],
+        selectedVideo: null,
+    };
+
+    onVideoSelect = (video) => {
+        console.log(video);
+        this.setState({ selectedVideo: video });
     };
 
     onTermSubmit = async (term) => {
@@ -21,8 +29,7 @@ class App extends Component {
                 key: KEY,
             },
         });
-        console.log(response);
-        console.log(response.data.items);
+
         this.setState({ videos: response.data.items });
     };
 
@@ -32,13 +39,19 @@ class App extends Component {
         return (
             <div>
                 <div className="container">
+                    <Nav />
                     <SearchBar onFormSubmit={this.onTermSubmit} />
                 </div>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-8">Videos</div>
+                        <div className="col-md-8">
+                            <VideoDetail video={this.state.selectedVideo} />
+                        </div>
                         <div className="col-md-4">
-                            <VideoList videos={videos} />
+                            <VideoList
+                                videos={videos}
+                                onVideoSelect={this.onVideoSelect}
+                            />
                         </div>
                     </div>
                 </div>

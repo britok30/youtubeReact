@@ -19,10 +19,6 @@ class SearchBar extends Component {
         return (
             <div>
                 <form onSubmit={this.onFormSubmit}>
-                    <label htmlFor="search" style={{ marginTop: "3rem" }}>
-                        Video Search
-                    </label>
-
                     <div className="input-group mb-3">
                         <input
                             className="form-control"
@@ -31,6 +27,7 @@ class SearchBar extends Component {
                             style={{ display: "block", width: "90%" }}
                             onChange={this.onChange}
                             value={this.state.term}
+                            placeholder="Video Search"
                         />
                         <div className="input-group-append">
                             <button
