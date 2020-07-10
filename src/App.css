@@ -79,3 +79,11 @@ input {
 .fake-links li i {
     font-size: 1.3rem;
 }
+
+/* CARD */
+
+.video-card {
+    background: #181818;
+    cursor: pointer;
+    width: 100px;
+}

@@ -15,11 +15,7 @@ const VideoDetail = ({ video }) => {
         <div>
             <div className="card video-details">
                 <div className="embed-responsive embed-responsive-16by9">
-                    <iframe
-                        src={videoSrc}
-                        title={video.snippet.title}
-                        autoplay
-                    />
+                    <iframe src={videoSrc} title="video player" autoplay />
                 </div>
 
                 <div className="card-body">

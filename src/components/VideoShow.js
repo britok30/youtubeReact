@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Youtube from "../api/Youtube";
-import VideoList from "./VideoList";
+import VideoShowList from "./VideoShowList";
 
-const KEY = "AIzaSyDR385vzb0vgxny4atFafXRSpgXk40UCsQ";
+const KEY = "AIzaSyBVt0YG2FPT6Fy5PzFKU89iyMjbIIeO1ps";
 
 class VideoShow extends Component {
     state = {
@@ -13,10 +13,10 @@ class VideoShow extends Component {
     componentDidMount = async () => {
         const response = await Youtube.get("/search", {
             params: {
-                q: "trending",
+                q: "tech",
                 part: "snippet",
                 type: "video",
-                maxResults: 10,
+                maxResults: 12,
                 key: KEY,
             },
         });
@@ -31,8 +31,8 @@ class VideoShow extends Component {
 
     render() {
         return (
-            <div>
-                <VideoList
+            <div className="card-columns">
+                <VideoShowList
                     videos={this.state.videos}
                     onVideoSelect={this.onVideoSelect}
                 />

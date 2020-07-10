@@ -6,7 +6,7 @@ import VideoDetail from "./VideoDetail";
 import Nav from "./Nav";
 import "../App.css";
 
-const KEY = "AIzaSyDR385vzb0vgxny4atFafXRSpgXk40UCsQ";
+const KEY = "AIzaSyBVt0YG2FPT6Fy5PzFKU89iyMjbIIeO1ps";
 
 class App extends Component {
     state = {
@@ -30,7 +30,10 @@ class App extends Component {
             },
         });
 
-        this.setState({ videos: response.data.items });
+        this.setState({
+            videos: response.data.items,
+            selectedVideo: response.data.items[0],
+        });
     };
 
     render() {
