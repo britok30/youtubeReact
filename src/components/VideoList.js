@@ -1,8 +1,12 @@
 import React from "react";
+import VideoItem from "./VideoItem";
 
-const VideoList = (props) => {
-    const { videos } = props;
-    return <div>{videos.length}</div>;
+const VideoList = ({ videos }) => {
+    const renderedList = videos.map((video) => {
+        return <VideoItem key={video.id} video={video} />;
+    });
+
+    return <div>{renderedList}</div>;
 };
 
 export default VideoList;

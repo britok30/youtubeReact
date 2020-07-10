@@ -21,19 +21,20 @@ class App extends Component {
                 key: KEY,
             },
         });
-
+        console.log(response);
+        console.log(response.data.items);
         this.setState({ videos: response.data.items });
     };
 
     render() {
         const { videos } = this.state;
-        
+
         return (
             <div>
                 <div className="container">
                     <SearchBar onFormSubmit={this.onTermSubmit} />
                 </div>
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-8">Videos</div>
                         <div className="col-md-4">
